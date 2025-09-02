@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+  <script defer src="dist/lib/star-wars.js"></script>
+  <script defer src="dist/scripts/search.js"></script>
+
+  <title>STAR WARS</title>
+</head>
+<body>
+  <header>
+    <div class="column is-3">
+      <h1 class="title">STAR WARS</h1>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="column is-8 is-offset-2">
+        <!-- ЕДИНАЯ СТРОКА ПОИСКА -->
+        <div id="searchBlock" class="field has-addons">
+          <div class="control">
+            <div class="select is-large">
+              <select id="searchMode">
+                <option value="query" selected>By Name</option>
+                <option value="id">By ID</option>
+              </select>
+            </div>
+          </div>
+          <div class="control">
+            <div class="select is-large">
+              <select id="resourceSelect">
+                <option value="characters" selected>People</option>
+                <option value="planets">Planets</option>
+                <option value="species">Species</option>
+              </select>
+            </div>
+          </div>
+          <div class="control is-expanded">
+            <input id="searchInput" class="is-large input" type="text" placeholder="Search…">
+          </div>
+          <div class="control">
+            <button id="searchBtn" class="is-large button">GO</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Спиннер -->
+    <img id="spinner" class="spinner" src="images/dv.png" alt="">
+
+    <!-- Контейнер результата -->
+    <section class="section">
+      <div id="result-container" class="column is-6 is-offset-2">
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Results</p>
+            <button class="delete" aria-label="delete"></button>
+          </div>
+          <div id="content" class="message-body"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
